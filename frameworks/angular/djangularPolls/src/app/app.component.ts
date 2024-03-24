@@ -53,14 +53,12 @@ export class AppComponent {
 
   constructor() {
     //synchronous
-    this.questionsList = this.questionService.getAllQuestions();
+    //this.questionsList = this.questionService.getAllQuestions();
 
     //async
-    /*
     this.questionService.getAllQuestions().then((questionsList: Question[]) =>
     {
       this.questionsList = questionsList;
     });
-    */
   }
 }

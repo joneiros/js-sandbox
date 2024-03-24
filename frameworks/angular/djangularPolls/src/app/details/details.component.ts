@@ -35,14 +35,12 @@ export class DetailsComponent {
   constructor() {
     this.questionId = Number(this.route.snapshot.params['id']);
     //synchronous
-    this.question = this.questionService.getQuestionById(this.questionId);
+    //this.question = this.questionService.getQuestionById(this.questionId);
 
     //async
-    /*
     this.questionService.getQuestionById(this.questionId).then((question: Question | undefined) =>
     {
       this.question = question;
     });
-    */
   }
 }

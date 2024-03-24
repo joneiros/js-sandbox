@@ -27,29 +27,37 @@ export class QuestionsService {
     }
   ];
 
-  getAllQuestions(): Question[] {
+  getStubAllQuestions(): Question[] {
     return this.questionsListStub
   }
-  getQuestionById(id: number): Question | undefined {
+  getStubQuestionById(id: number): Question | undefined {
     return this.questionsListStub.find(question => question.id === id);
   }
 
   url = "http://localhost:8000/api/questions"
 
-  async getRealAllQuestions(): Promise<Question[]> {
+  async getAllQuestions(): Promise<Question[]> {
     const data = await fetch(this.url, {
-      method: 'GET',
       mode: 'cors',
-      credentials: "include"
+      credentials: "include",
+      headers: {
+        "Origin": "http://localhost:4200/",
+        "Accept": "*/*",
+        "Access-Control-Allow-Credentials": "true",
+      }
     });
     return await data.json() ?? [];
   }
 
-  async getRealQuestionById(id: number): Promise<Question | undefined> {
+  async getQuestionById(id: number): Promise<Question | undefined> {
     const data = await fetch(`${this.url}/${id}`, {
-      method: 'GET',
       mode: 'cors',
-      credentials: "include"
+      credentials: "include",
+      headers: {
+        "Origin": "http://localhost:4200/",
+        "Accept": "*/*",
+        "Access-Control-Allow-Credentials": "true",
+      }
     });
     return await data.json() ?? {};
   }
