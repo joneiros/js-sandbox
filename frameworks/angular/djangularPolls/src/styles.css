@@ -1,1 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
+:host {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --blackblue-pearl: oklch(20.65% 0.028 255.84);
+    --black-pearl: oklch(
+        from var(--blackblue-pearl) calc(l - 0.05) calc(c - 0.01) h
+    );
+    --bluelight-pearl: oklch(from var(--blackblue-pearl) calc(l + 0.1) c h);
+    --parchment: oklch(94.33% 0.046 101.86);
+    --pale-goldenrod: oklch(97.5% 0.052 107.32);
+	--sky-blue: oklch(92.69% 0.031 220.79);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+    background-image: url("https://wrok.work/images/telephone-polls.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body {
+	padding: .25em;
+	margin: auto auto;
+	min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    overflow: visible;
+    overflow-y: scroll;
+}
+
+@media only screen AND (orientation: portrait) {
+    html {
+        background-image: url("https://wrok.work/images/portrait-telephone-polls.webp");
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+h1 {
+    margin: 0;
+    font-size: max(3vh, 2em);
+    white-space: nowrap;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+header {
+    display: flex;
+
+    justify-content: space-between;
+    width: 75%;
+    background-color: oklch(from var(--sky-blue) l c h / 70%);
+    border-radius: 5px;
+    min-height: 100%;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+	margin: auto auto;
+	margin-bottom: 1em;
+}
+header h1 {
+    justify-content: flex-start;
+}
+
+header nav {
+    justify-items: flex-end;
+    padding-right: 0.5em;
+}
+header nav a {
+    padding: 0.25em;
+    display: block;
+    text-align: right;
+}
+
+main {
+    background-color: oklch(from var(--sky-blue) l c h / 80%);
+	border-radius: 5px;
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+	margin: auto auto;
+}

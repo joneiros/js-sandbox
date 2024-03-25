@@ -1,10 +1,16 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
+import { QuestionsComponent } from './questions/questions.component';
 import { DetailsComponent } from './details/details.component';
 import { NewQuestionComponent } from './new-question/new-question.component';
 
 export const routes: Routes = [
+    {
+        path: '',
+        component: QuestionsComponent,
+        title: 'Main Page'
+    },
     {
         path: 'double',
         component: AppComponent,

@@ -1,5 +1,10 @@
+<header>
+  <h1>Phony Polls</h1>
+  <nav>
+    <a [routerLink]="['/']">GOTO Main</a>
+    <a [routerLink]="['/question/new']">Create New Question</a>
+  </nav>
+</header>
 <main>
-  <header>
-    Fairhouse
-  </header>
+  <router-outlet></router-outlet>
 </main>
