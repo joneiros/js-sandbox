@@ -11,15 +11,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   template: `
-    <p>
-      {{internalQuestion.question_text}}:
-      <!-- anchor using href
-        <a href="/details/{{question.id}}">GOTO</a>
-      -->
-      <!-- anchor using routerLink -->
-      <a [routerLink]="['/details', question.id]" >{{question.question_text}}</a>
-    </p>
-
+      <li><a class="question-link" [routerLink]="['/details', question.id]" >{{question.question_text}}</a></li>
   `,
   styleUrl: './question.component.css'
 })

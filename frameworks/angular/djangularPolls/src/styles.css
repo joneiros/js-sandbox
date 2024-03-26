@@ -9,13 +9,6 @@
 }
 
 :root {
-    --blackblue-pearl: oklch(20.65% 0.028 255.84);
-    --black-pearl: oklch(
-        from var(--blackblue-pearl) calc(l - 0.05) calc(c - 0.01) h
-    );
-    --bluelight-pearl: oklch(from var(--blackblue-pearl) calc(l + 0.1) c h);
-    --parchment: oklch(94.33% 0.046 101.86);
-    --pale-goldenrod: oklch(97.5% 0.052 107.32);
 	--sky-blue: oklch(92.69% 0.031 220.79);
 }
 
@@ -55,8 +48,6 @@ body {
 
 h1 {
     margin: 0;
-    font-size: max(3vh, 2em);
-    white-space: nowrap;
     font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
         "Segoe UI Emoji", "Segoe UI Symbol";
@@ -67,17 +58,19 @@ header {
 
     justify-content: space-between;
     width: 75%;
-    background-color: oklch(from var(--sky-blue) l c h / 70%);
+    background-color: oklch(from var(--sky-blue) l c h / 80%);
     border-radius: 5px;
     min-height: 100%;
-    padding: 1rem;
+    padding: .25em 1rem;
     box-sizing: inherit;
     position: relative;
 	margin: auto auto;
 	margin-bottom: 1em;
 }
 header h1 {
+	font-size: 2em;
     justify-content: flex-start;
+	align-content: center;
 }
 
 header nav {
@@ -87,13 +80,13 @@ header nav {
 header nav a {
     padding: 0.25em;
     display: block;
-    text-align: right;
+    text-align: center;
 }
 
 main {
     background-color: oklch(from var(--sky-blue) l c h / 80%);
 	border-radius: 5px;
-    width: 50%;
+    width: 75%;
     min-height: 100%;
     display: flex;
     justify-content: center;
@@ -102,4 +95,46 @@ main {
     box-sizing: inherit;
     position: relative;
 	margin: auto auto;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+ul {
+	margin: 1em 0;
+	padding: 0;
+	text-align:center;
+}
+
+main h1 {
+	font-size:1.75em;
+	text-align: center;
+}
+
+li {
+	background-color: oklch(from var(--sky-blue) 100 100 100 / 85%);
+	border-radius: 5px;
+	margin: .5em 0;
+	padding: .25em;
+	list-style-type: none;
+}
+
+main li {
+	font-size: 1.25em;
+}
+
+@media only screen AND (orientation: landscape) {
+	li {
+		background-color: oklch(from var(--sky-blue) 100 100 100 / 60%);
+	}
+}
+
+li:hover {
+	background-color: oklch(from var(--sky-blue) 100 100 100);
+}
+
+.question-text {
+	text-align: center;
 }
