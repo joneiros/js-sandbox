@@ -61,13 +61,14 @@ header {
     background-color: oklch(from var(--sky-blue) l c h / 80%);
     border-radius: 5px;
     min-height: 100%;
-    padding: .25em 1rem;
+    padding: .25em;
     box-sizing: inherit;
     position: relative;
 	margin: auto auto;
 	margin-bottom: 1em;
 }
 header h1 {
+	padding: 0 .25em;
 	font-size: 2em;
     justify-content: flex-start;
 	align-content: center;
@@ -137,4 +138,13 @@ li:hover {
 
 .question-text {
 	text-align: center;
+}
+
+.new-question form input{
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.new-question form {
+    text-align: center;
 }

@@ -5,6 +5,11 @@ import { Question } from './question/question';
   providedIn: 'root'
 })
 export class QuestionsService {
+  corsHeaders = {
+    "Origin": "http://localhost:4200/",
+    "Accept": "*/*",
+    "Access-Control-Allow-Credentials": "true",
+  };
 
   constructor() { }
 
@@ -40,11 +45,7 @@ export class QuestionsService {
     const data = await fetch(this.url, {
       mode: 'cors',
       credentials: "include",
-      headers: {
-        "Origin": "http://localhost:4200/",
-        "Accept": "*/*",
-        "Access-Control-Allow-Credentials": "true",
-      }
+      headers: this.corsHeaders
     });
     return await data.json() ?? [];
   }
@@ -53,12 +54,35 @@ export class QuestionsService {
     const data = await fetch(`${this.url}/${id}`, {
       mode: 'cors',
       credentials: "include",
-      headers: {
-        "Origin": "http://localhost:4200/",
-        "Accept": "*/*",
-        "Access-Control-Allow-Credentials": "true",
-      }
+      headers: this.corsHeaders
     });
     return await data.json() ?? {};
+  }
+
+  submitQuestion(questionText: string, pubDate: string) {
+    console.log(`question: ${questionText} \n pub_date: ${pubDate} `)
+
+    var postHeaders = {
+      ...this.corsHeaders,
+      "Content-Type": "application/json"
+    };
+
+    const data = fetch(`${this.url}/`, {
+      method: 'POST',
+      credentials: "include",
+      // may need to add to headers 'Content-Type': 'application/json'
+      headers: postHeaders,
+      body: JSON.stringify({
+        question_text: questionText,
+        pub_date: pubDate
+      })
+    });
+
+    var response = null;
+
+    data.then((r: Response | undefined) => {
+      response = r;
+      console.log(r);
+    });
   }
 }

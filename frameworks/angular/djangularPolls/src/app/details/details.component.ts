@@ -15,7 +15,7 @@ import { QuestionsService } from '../questions.service';
     <div *ngIf="question; else noQuestion">
       <p>Question: <strong>{{question.question_text}}</strong></p>
       <p>id: {{question.id}}</p>
-      <p>pub_date: {{question.pub_date}}</p>
+      <p>Published On: {{question.pub_date}}</p>
     </div>
 
     <ng-template #noQuestion>
@@ -40,6 +40,12 @@ export class DetailsComponent {
     //async
     this.questionService.getQuestionById(this.questionId).then((question: Question | undefined) =>
     {
+      if(question !== undefined) {
+        var dateString = question?.pub_date ?? '';
+        const questionPubDate: Date = new Date(dateString);
+        question.pub_date = questionPubDate.toLocaleString('en-US');
+      }
+
       this.question = question;
     });
   }
