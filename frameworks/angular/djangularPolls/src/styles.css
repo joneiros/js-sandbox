@@ -21,9 +21,9 @@ html {
 	height: 100vh;
 	margin: 0 auto;
     background-image: url("https://wrok.work/images/telephone-polls.jpg");
-    background-size: 100% 100%;
+
+    background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
 }
 
 body {
@@ -40,9 +40,8 @@ body {
 @media only screen AND (orientation: portrait) {
     html {
         background-image: url("https://wrok.work/images/portrait-telephone-polls.webp");
+        background-size: cover;
         background-attachment: fixed;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
     }
 }
 
