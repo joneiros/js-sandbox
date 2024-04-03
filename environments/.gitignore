@@ -1,0 +1,2 @@
+# For the minimal project it's better that the latest packages are always used
+/testable-minimal/package-lock.json

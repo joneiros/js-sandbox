@@ -1,0 +1,2 @@
+# No challenge questions should be so complex that their dependencies need exact versioning
+**/package-lock.json
