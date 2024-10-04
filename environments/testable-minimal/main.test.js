@@ -1,5 +1,5 @@
-const sum = require("./main");
+const mainFunk = require("./main");
 
-test('sum', () => {
-    expect(sum(1,2)).toEqual(3);
+test('a', () => {
+    expect(mainFunk(1,2)).toEqual(3);
 });
