@@ -10,12 +10,12 @@ uniqueness of letters in remaining words
 -First order Unique:
     - Zero
     - tWo
+    - foUr
     - siX
+    - eiGht
 - Unique After removal of others before it (including in this ordered list)
     - Seven
-    - foUr
     - Five (also fiVe)
-    - eiGht
     - One
     - Three (also tHree, and thRee)
     - Nine
@@ -82,9 +82,6 @@ function mainFunk(s) {
         }
 
     }
-
-
-
 
     return digits.sort().join('');
 }
