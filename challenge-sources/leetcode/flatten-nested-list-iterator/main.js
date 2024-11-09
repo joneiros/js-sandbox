@@ -3,9 +3,22 @@
  * Jon's Note: This is not easily testable locally as it uses a background interface hinted at below.
  *
  * My goal was to flatten the list within the constructor. I realized this would require recursion,
+ *
+ * (THIS NEXT PART IS WRONG)
  * but recursion in JS doesn't work quite the same as PHP or other languages, because when JS
  * returns to the previous version of the function, it doesn't hold on to the original context.
- * The trick to getting recursion to remember prior context was to use Generators (the function nestBuster below)
+ * (WHY IT WAS WRONG)
+ * (Recursion does maintain context in JS. The generator below is a different case.
+ * While I'm not 100% sure of the isssue I was having before with recursion,
+ * a recent bug in my merge-sort
+ *     (see https://github.com/joneiros/js-sandbox/commit/c6f97dcbf27e96d0270c7eec3e90c54c12f1fe77?diff=unified )
+ * implementation suggests that I was likely having
+ * context issues here because I was accidentally creating a global variable that was
+ * being overwritten, OR because I was doing it in a constructor
+ * (I have not yet tested recursion in constructors, but I'm guessing it works fine and the
+ *  problem was a missing let/var/const).)
+ *
+ * ~~The~~ Another trick to getting recursion to remember prior context was to use Generators (the function nestBuster below)
  * Generators reference:
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator
