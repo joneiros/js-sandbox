@@ -1,0 +1,11 @@
+{
+  "README": {
+    "scripts-test": "this script is shorthand for 'node ./node_modules/jest/bin/jest.js'"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29"
+  }
+}
