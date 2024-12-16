@@ -1,9 +1,9 @@
-function mainFunk(a, b) {
-    return a + b;
+function mainFunk(input) {
+    return input;
 }
 
-function anotherFunk(a, b) {
-    return a + b;
+function anotherFunk(a) {
+    return a + a;
 }
 
 module.exports = {mainFunk, anotherFunk};
